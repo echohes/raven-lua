@@ -145,7 +145,11 @@ end
 -- The default implementation just returns `"undefined"`, users are encouraged
 -- to override this to something more sensible.
 function _M.get_server_name()
-    return "undefined"
+    local fh = io.popen ("/bin/hostname")
+    local hostname = f:read("*a") or "undefined"
+    fh:close()
+    hostname = string.gsub(hostname, "\n$", "")
+    return hostname
 end
 
 --- This table can be used to tune the message reporting.
