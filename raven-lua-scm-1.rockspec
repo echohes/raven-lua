@@ -1,7 +1,7 @@
 package = "raven-lua"
 version = "scm-1"
 source = {
-   url = "git://github.com/echohes/raven-lua",
+   url = "git+https://github.com/echohes/raven-lua",
    branch = "test",
 }
 
