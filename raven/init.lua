@@ -146,7 +146,7 @@ end
 -- to override this to something more sensible.
 function _M.get_server_name()
     local fh = io.popen ("/bin/hostname")
-    local hostname = f:read("*a") or "undefined"
+    local hostname = fh:read("*a") or "undefined"
     fh:close()
     hostname = string.gsub(hostname, "\n$", "")
     return hostname
